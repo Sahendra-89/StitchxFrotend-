@@ -1,0 +1,237 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  /* PAGE / SECTION BACKGROUNDS */
+  --bg-main: #FFFFFF;
+  --bg-section: #F1F4F8;
+  --bg-section-subtle: #EEF2F7;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F8FAFF;
+
+  /* NAVIGATION */
+  --nav-bg: transparent;
+  --nav-text: #0B1220;
+  --nav-text-secondary: #2B384E;
+  --nav-text-hover: #1677FF;
+  --nav-text-active: #0B1220;
+  --nav-border: transparent;
+
+  /* PRIMARY TEXT & HEADINGS - Sophisticated Dark Navy / Near Black */
+  --text-heading-main: #0B1220;
+  --text-heading-section: #0B1220;
+  --text-heading-card: #0B1220;
+  --text-primary: #0B1220;
+  --text-secondary: #2B384E;
+  --text-muted: #596579;
+  --text-very-subtle: #7A8494;
+
+  /* INTERACTIVE BLUE */
+  --hover-blue: #1677FF;
+  --primary: #2563EB;
+  --primary-hover: #1677FF;
+  --primary-secondary: #1677FF;
+  --accent-light: #EEF3FF;
+  --accent-very-light: #F4F7FF;
+  --border-blue: #C9D7F5;
+
+  /* CARDS */
+  --card-bg: #FFFFFF;
+  --card-border: #E2E7EF;
+  --card-border-hover: #BFDBFE;
+  --card-hover-bg: #F8FAFF;
+  --card-shadow: 0 4px 20px rgba(11, 18, 32, 0.04);
+
+  /* BUTTONS */
+  --btn-primary-bg: #2563EB;
+  --btn-primary-text: #FFFFFF;
+  --btn-primary-hover: #1677FF;
+  --btn-secondary-bg: #FFFFFF;
+  --btn-secondary-text: #0B1220;
+  --btn-secondary-border: #E2E7EF;
+  --btn-secondary-hover: #F8FAFF;
+
+  /* ICONS */
+  --icon-primary: #0B1220;
+  --icon-hover: #1677FF;
+  --icon-bg: #EEF3FF;
+
+  /* BORDERS / DIVIDERS */
+  --border: #E2E7EF;
+  --border-subtle: #E8ECF2;
+  --border-hover: #BFDBFE;
+}
+
+@theme {
+  --color-canvas: #FFFFFF;
+  --color-canvas-subtle: #F1F4F8;
+  --color-surface: #FFFFFF;
+  --color-surface-hover: #F8FAFF;
+  --color-surface-dark: #111827;
+  --color-surface-dark-subtle: #1F2937;
+
+  --color-border: #E2E7EF;
+  --color-border-subtle: #E8ECF2;
+  --color-border-dark: #1F2937;
+
+  --color-primary: #2563EB;
+  --color-primary-hover: #1677FF;
+
+  --color-accent-light: #EEF3FF;
+  --color-accent-very-light: #F4F7FF;
+  --color-border-blue: #C9D7F5;
+
+  --color-text-main: #0B1220;
+  --color-text-heading: #0B1220;
+  --color-text-card: #0B1220;
+  --color-text-primary: #0B1220;
+  --color-text-secondary: #2B384E;
+  --color-text-muted: #596579;
+  --color-text-subtle: #7A8494;
+
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  * {
+    border-color: #E2E7EF;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  body {
+    background-color: #FFFFFF;
+    color: #2B384E;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #0B1220;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+  }
+
+  p {
+    color: #2B384E;
+    line-height: 1.65;
+  }
+}
+
+/* Subtle Technical Hairline Utilities */
+.tech-subtle-grid {
+  background-image: none;
+  background-color: #FFFFFF;
+}
+
+/* Continuous Left-to-Right Technology Marquee Ticker */
+@keyframes marquee-ltr {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-ltr {
+  display: flex;
+  width: max-content;
+  animation: marquee-ltr 32s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-ltr:hover {
+  animation-play-state: paused;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F8FA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
+/* Accessible Keyboard Focus Indicators (WCAG 2.2 AA) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #1677FF;
+  outline-offset: 2px;
+}
+
+/* Accessibility: Respect User's Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Global Print & PDF Generation Rules - Standard A4 Portrait (210 x 297 mm) */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 14mm 12mm 14mm;
+  }
+
+  html, body {
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  #root,
+  #root > div {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  .print-avoid-break,
+  .print-signature-section,
+  .avoid-break,
+  tr,
+  blockquote {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  tfoot {
+    display: table-footer-group !important;
+  }
+}

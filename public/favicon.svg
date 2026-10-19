@@ -1,0 +1,32 @@
+<svg width="64" height="64" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="tf-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4" />
+      <stop offset="60%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+    <radialGradient id="tf-node" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E0F2FE" />
+      <stop offset="100%" stop-color="#06B6D4" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background rounded squircle -->
+  <rect width="100" height="100" rx="24" fill="#0B1220" />
+  <rect x="1" y="1" width="98" height="98" rx="23" stroke="#1F2937" stroke-width="2" />
+
+  <!-- TF Circuit Structure -->
+  <path d="M20 28 H80" stroke="url(#tf-grad)" stroke-width="7" stroke-linecap="round" />
+  <path d="M34 28 V64 L48 78" stroke="url(#tf-grad)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M48 28 V78" stroke="url(#tf-grad)" stroke-width="7" stroke-linecap="round" />
+  <path d="M48 42 H72" stroke="url(#tf-grad)" stroke-width="7" stroke-linecap="round" />
+  <path d="M72 42 L62 56 H48" stroke="url(#tf-grad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M48 58 H66 L72 64" stroke="url(#tf-grad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Circuit Nodes -->
+  <circle cx="20" cy="28" r="5" fill="url(#tf-node)" />
+  <circle cx="80" cy="28" r="5" fill="url(#tf-node)" />
+  <circle cx="48" cy="78" r="5.5" fill="url(#tf-node)" />
+  <circle cx="72" cy="42" r="5" fill="url(#tf-node)" />
+  <circle cx="72" cy="64" r="4.5" fill="url(#tf-node)" />
+</svg>
