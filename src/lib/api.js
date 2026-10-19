@@ -8,7 +8,10 @@ const LEGACY_TOKEN_KEY = 'techfusion_admin_token';
 const ADMIN_USER_KEY = 'stitchx_admin_user';
 const LEGACY_USER_KEY = 'techfusion_admin_user';
 
-export const API_BASE = (import.meta.env.VITE_API_URL || '').replace(/\/+$/, '');
+export const API_BASE = (
+  import.meta.env.VITE_API_URL ||
+  (import.meta.env.PROD ? 'https://stitchxbackend.onrender.com' : '')
+).replace(/\/+$/, '');
 
 export function apiUrl(path) {
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
